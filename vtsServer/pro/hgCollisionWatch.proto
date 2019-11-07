@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+enum hgCollisionCPAType
+{
+    Custom = 0;         //自定义
+    DayDefault = 1;     //白天默认
+    DayShipType = 2;    //白天船舶类型
+    NightDefault = 3;     //夜晚默认
+    NightShipType = 4;    //白天船舶类型
+    CPArecord = 5;   //获取CPA
+}
+
+message hgCollisionWatch
+{
+	string MMSI = 1;
+	bool CollisionWatch = 2;	
+	double DCPA = 3;
+  double TCPA = 4;
+  int32 Type = 5; 
+  int32 GetCPA = 6;
+}
+
+message hgCollisionWatchRepsone
+{
+
+}

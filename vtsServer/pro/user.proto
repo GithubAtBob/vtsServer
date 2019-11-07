@@ -1,0 +1,21 @@
+syntax = "proto3";
+message UserRequest
+{
+    int32 type = 1;
+    string account = 2;
+    string userid = 3;
+    string loginname = 4;
+    string username = 5;
+    string password = 6;
+    string phone = 7;
+    string groupID = 8;
+    string avatar = 9;
+    string oldloginname = 10;
+}
+
+message UserRepsone
+{
+    int32 type = 1;
+    string message = 2;
+    string result = 3;
+}

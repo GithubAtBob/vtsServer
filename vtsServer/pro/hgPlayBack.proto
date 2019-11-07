@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message hgPlayBack
+{
+  string type = 1;  //"Change","Clear"
+  int64 time = 2;
+}
+
+

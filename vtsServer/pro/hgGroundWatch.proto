@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message hgGroundWatch
+{
+	string MMSI = 1;
+	bool 	GroundWatch = 2;	
+	double GroundDraught = 3;
+  double KeelClearance = 4;
+}
+
+message hgGroundWatchRepsone
+{
+
+}

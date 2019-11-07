@@ -1,0 +1,5 @@
+syntax = "proto3";
+message hgHeartBeatPack
+{
+	int32 heart = 1;
+}

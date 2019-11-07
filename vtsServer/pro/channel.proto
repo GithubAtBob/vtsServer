@@ -1,0 +1,41 @@
+syntax = "proto3";
+import "PointMes.proto";
+import "channelwarinfo.proto";
+message ChannelWay
+{
+    repeated PointMes point = 1;//共10个点 顺序为
+                      //LeftBegin = 1,
+                      //LeftEnd,
+                      //MidBegin,
+                      //MidEnd,
+                      //RightBegin,
+                      //RightEnd,
+                      //LefMidBegin,
+                      //LefMidEnd,
+                      //RigMidBegin,
+                      //RigMidEnd,
+}
+message ChannelRequest
+{
+    int32 type = 1;//操作类型
+    string ID = 2;
+    string name = 3;
+    string annotation = 4;
+    int32 channeltype = 5;
+    double width = 6;
+    repeated ChannelWay channel = 7;
+    int32 linestyle = 8;
+    string linecolor = 9;
+    string waringID = 10;
+    string waringtype = 11;
+    string drawman = 12;
+    bool isshare = 13;
+    repeated ChannelWarInfo info = 14;
+}
+
+message ChannelRepsone
+{
+    int32 type = 1;//操作类型
+    string result = 2;
+    repeated ChannelRequest channels= 3;
+}

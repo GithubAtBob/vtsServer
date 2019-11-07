@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "hgWarningType.proto";
+
+enum hgWarningLevel
+{
+  NoWarn = 0;//无意义
+	FirstWarn = 1;//一级报警
+	SecondWarn = 2;//二级报警
+	ThirdWarn = 3;//三级报警
+	FourthWarn = 4;//四级报警
+}
+
+message hgWarnPoint
+{
+    int64 time = 1;
+    double distance = 2;
+}
+
+message hgEarlyWarnMes
+{
+    string WarningID = 1;  //警告类型GUID类型标示符
+    string WarningGUID = 2; //数据包唯一标识符
+    int32 WarningPriority = 3;//优先级
+    string WarningName = 4;
+    string MMSI = 5;			// 船号ID
+    string TargetMMSI = 6;
+    int64 WarningTime = 7; //报警时间
+    hgWarningLevel Level = 8;  //报警等级
+    repeated hgWarnPoint Point = 9; //预测点
+    bool StartPaint = 10;
+    hgWarningType WarningType = 11; //具体警报类型
+}

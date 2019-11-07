@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+enum CellType
+{
+	NormalShip = 0;				
+	BarrierShip = 1;
+	ThroughShip = 2;
+	VirtualShip = 3;
+}
+
+
+message hgCellularShip
+{
+  string MMSI = 1;
+  int32 Length = 2;
+  int32 Width = 3;
+  string ShipType = 4;
+  int32 SOG = 5;
+  double HDG = 6;
+  string GoodsType = 7; 
+   
+  int32 CellularCount = 8;
+  int32 FirstLine = 9;
+  int32 FirstRow = 10;
+  int32 LastLine = 11;
+  int32 LastRow = 12;
+  
+  int32 OvertakingNum = 13;  //追越次数
+  int32 AcrossNum = 14;      //穿越次数 
+  int32 HeadonNum = 15;     //对遇次数
+  int32 IntersectNum = 16;  //交叉次数
+  int32 ObstructNum = 17;  //遇碍次数
+  
+  int32 StartTime = 18;
+  int32 EndTime = 19;
+  
+  double Danger = 20;  //危险度
+  double AvSOG = 21;  //平均速度
+  
+  double Lat = 22;
+  double Lon = 23;
+  
+  CellType SendType = 24;
+  bool In = 25;
+  
+   double Tonnage = 26;
+}
+

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vtsServer", "vtsServer\vtsServer.vcxproj", "{F59CD229-FD77-450E-9A06-A7800CE93867}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testclient", "testclient\testclient.vcxproj", "{3FB64049-5044-4EDC-A0B2-DB3FEB5C4176}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F59CD229-FD77-450E-9A06-A7800CE93867}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F59CD229-FD77-450E-9A06-A7800CE93867}.Debug|Win32.Build.0 = Debug|Win32
+		{F59CD229-FD77-450E-9A06-A7800CE93867}.Release|Win32.ActiveCfg = Release|Win32
+		{F59CD229-FD77-450E-9A06-A7800CE93867}.Release|Win32.Build.0 = Release|Win32
+		{3FB64049-5044-4EDC-A0B2-DB3FEB5C4176}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3FB64049-5044-4EDC-A0B2-DB3FEB5C4176}.Debug|Win32.Build.0 = Debug|Win32
+		{3FB64049-5044-4EDC-A0B2-DB3FEB5C4176}.Release|Win32.ActiveCfg = Release|Win32
+		{3FB64049-5044-4EDC-A0B2-DB3FEB5C4176}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		Qt5Version = msvc2010
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,67 @@
+syntax = "proto3";
+message RadarImagePack
+{
+    int32 packettype = 1;   //数据包编号0xFF 使用时转为unsigned char
+    repeated string reserved0 = 2;  //保留使用 
+    int64 utc = 3; //UTC时间戳 
+    double view_center_x = 4;  //PNG图像纬度 
+    double view_center_y = 5; //PNG图像经度 
+    double view_scale = 6; //图像比例, [像素/m] 
+    repeated string reserved1 = 7; //保留使用 
+    bytes image = 8;
+    string clientname = 9;//要发送到的客服端
+}
+
+message ArpaTargetPack
+{
+    int32 number = 1;       //2个字节：跟踪目标的编号0x0000至0x0800, 0xffff-本站信息 
+    int32 reserved = 2;     //2个字节：如果是ARPA或者AIS数据包此字节是保留使用（reserved），如果是本船信息，此字节为本船HDG（艏向）信息 
+    int32 rng = 3;          //2个字节：回波距离校准，分辨率1m，用来调整目标和海图的比例匹配 
+    int32 brg = 4;          //2个字节：回波方位校准，分辨率0.0878度（360度/4096），用来调整目标和海图的方位匹配 
+    int32 orientation_size = 5;//4个字节：目标的尺度和船轴向angle，长度L，宽度W，轴向angle，分辨率0.1度：pack.orientation_size = angle|(L<<12)|(W<<22);备注：因为船舶的轴向和航行方向经常不一致，特别是轮渡船的，所以客户端可以选择显示两种矢量。
+    //int32 spd = 5;          //2个字节：目标相对速度，分辨率0.1 kn，0xffff为“无信息“（像如果目标刚被捕获，信息还没算出来） 
+    //int32 crs = 6;          //2个字节：目标相对航向，分辨率0.1度，0xffff为“无信息“ 
+    int32 sog = 6;          //2个字节：目标速度对地，分辨率0.1 kn，0xffff为“无信息“ 
+    int32 cog = 7;          //2个字节：目标航向（轴向）对北，分辨率0.1度，0xffff为“无信息“ 
+    int32 scans = 8;        //2个字节：目标跟踪时间，单位为天线转数 
+    int32 flags = 9;       //2个字节：目标跟踪状态比特- b1:1=自动捕获的，0=手动捕获的，b3：1=失踪的目标，0=正常跟踪的。 
+    int32 longitude = 10;   //4个字节： 经度， 分辨率1/600000度，1/10000分 
+    int32 latitude = 11;    //4个字节： 纬度，分辨率1/600000度，1/10000分
+    string clientname = 12;//要发送到的客服端
+}
+
+message RadarHeader
+{
+    int32 packettype = 1;
+    int32 stateflags = 2; //1个字节：状态比特(b0：0为待机，1为发射 ) 
+    repeated int32 reserved0 = 3;//2个字节：暂时不应用 
+    int64 utc = 4; //4个字节：UTC时间戳 
+    repeated int32 control = 5;//bytes: 0 to 7  8个调节字节：当前状态数值 
+    int32 tune_min = 6;//16位 调谐下限 
+    int32 tune_max = 7;//16位 调谐上限
+    int32 tune_value = 8;//16位 调谐数值 
+    repeated int32 pad = 9;//暂时不应用 
+    int32 controlbits0 = 10; //暂时不应用 
+    int32 controlbits1 = 11;//bit 0 – autotune  自动调谐比特 
+    string clientname = 12;//要发送到的客服端
+    int32 arpaState = 13;//自动捕获
+}
+
+message RadarRequst
+{
+    string mess = 1;//请求数据
+    string name = 2;//连接信息
+}
+
+message RadarAISStatePack
+{
+	int32 number = 1;
+	int32 reserved = 2;
+	int32 mms_id = 3;
+	int32 imo = 4;
+	string callsign = 5;
+	string name = 6;
+	string destination = 7;
+	int32 cargo = 8;
+	int32 dimensions = 9;
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "PointMes.proto";
+import "waringinfo.proto";
+message PloygonRequest
+{
+    int32 type = 1;//操作类型
+    string ID = 2;
+    string name = 3;
+    repeated PointMes point = 4;
+    int32 linestyle = 5;
+    int32 fullstyle = 6;
+    int32 linewidth = 7;
+    repeated string waringID = 8;
+    string waringtype = 9;
+    string drawman = 10;
+    bool isshare = 11;
+    string linecolor = 12;
+    string fullcolor = 13;
+    repeated WaringInfo info = 14;
+}
+
+message PloygonRepsone
+{
+    int32 type = 1;//操作类型
+    string result = 2;
+    repeated PloygonRequest ploygons= 3;
+}

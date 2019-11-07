@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+
+message hgAreaData
+{
+  string ID= 1;
+  int32 type = 2;
+}
+message hgReportArea
+{
+	string MMSI = 1;
+	bool 	ReportArea = 2;	
+	bool  Pattern = 3;
+	bool  AllChecked = 4;
+    repeated hgAreaData AreaData = 5;
+	int64 EarlistTime = 6;
+	int64 LatestTime = 7;
+}
+
+message hgReportAreaRepsone
+{
+
+}

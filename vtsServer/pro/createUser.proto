@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message CreateUserRequest
+{
+  string Account = 1;
+	string RealName = 2;
+	string Password = 3;
+	string Telephone = 4;
+	string GroupName = 5;
+	string UserImagePath = 6;
+}
+
+message CreateUserRepsone
+{
+    string result = 1;
+}

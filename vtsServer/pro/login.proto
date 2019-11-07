@@ -1,0 +1,18 @@
+syntax = "proto3";
+message LoginRequest
+{
+    string userName = 1;
+    string password = 2;
+}
+
+message LoginRepsone
+{
+    string result = 1;
+    string loginrole = 2;
+    string allgroup = 3;
+    string alluser = 4;
+    string allnotes = 5;
+    string allfixedobject = 6;
+    string allaidsail = 7;
+    int32 grouptype = 8;
+}

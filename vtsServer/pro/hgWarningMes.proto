@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+import "hgWarningType.proto";
+
+enum UserLayerType
+{
+	UPolygon = 0;
+	UCricle = 1;
+	USector = 2;
+	UReprotLine = 3;
+	UChannel = 4;
+	UNotes = 5;
+}
+
+message hgWarningMes
+{
+    string WarningID = 1;  //警告类型
+    string WarningGUID = 2; //数据包唯一标识符
+    hgWarningPriority WarningPriority = 3;//优先级->灯的颜色
+    string WarningName = 4;
+    WarningMessage Message = 5;
+    string MMSI = 6;			// 船号ID
+    
+    string UserLayGUID = 7;//图层唯一标识符
+    UserLayerType UserLayID = 8;//图层类型
+    
+    string ID = 9;//预留ID
+    int64 WarningTime = 10; //报警时间
+
+    hgWarningType WarningType = 11; //具体警报类型
+    string TargetMMSI = 12; //目标MMSI
+}
+
+message WarningMessage
+{
+    string str = 1;//文字信息
+    
+}

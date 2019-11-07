@@ -1,0 +1,10 @@
+syntax = "proto3";
+message hgServerMode
+{
+    int32 playback = 1;
+    int32 freshMode = 2;
+    int32 aisData = 3;
+    int32 radarData = 4;
+    int32 radarImage = 5;
+
+}

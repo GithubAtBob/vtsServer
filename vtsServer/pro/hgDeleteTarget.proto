@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+enum DeleteTarget
+{
+    DeleteAll = 0;
+    DeleteSim = 1;
+    DeleteLost = 2;
+}
+
+
+message hgDeleteTarget
+{
+    int32 DeleteType = 1;  //…æ≥˝¿‡–Õ
+}
+

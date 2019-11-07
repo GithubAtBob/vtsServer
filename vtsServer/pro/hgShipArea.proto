@@ -1,0 +1,7 @@
+syntax = "proto3";
+import "PointMes.proto";
+message hgShipArea
+{
+    string MMSI = 1;
+    repeated PointMes point = 2;
+}

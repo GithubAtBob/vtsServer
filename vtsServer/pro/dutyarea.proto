@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "PointMes.proto";
+
+message DutyAreaRequest
+{
+    int32 type = 1;//操作类型
+    string ID = 2;
+    string name = 3;
+    repeated PointMes point = 4;
+    int32 linestyle = 5;
+    int32 fullstyle = 6;
+    int32 linewidth = 7;
+    string dutyman = 8;
+    string drawman = 9;
+    bool isshare = 10;
+    string linecolor = 11;
+    string fullcolor = 12;
+}
+
+message DutyAreaRepsone
+{
+    int32 type = 1;//操作类型
+    string result = 2;
+    repeated DutyAreaRequest dutyareas= 3;
+}

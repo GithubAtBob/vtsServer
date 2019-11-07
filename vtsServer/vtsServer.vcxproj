@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F59CD229-FD77-450E-9A06-A7800CE93867}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)d</TargetName>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_SQL_LIB;PROTOBUF_USE_DLLS;QT_GUI_LIB;QT_SCRIPT_LIB;HG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtSql;$(BOOST);protobuf\include;$(HGSQL)\include;$(HGAIS)\include;$(HGSDK)\include;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtScript;$(VLD)\include;$(QTDIR)\include\QtSerialPort;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalOptions>-Zm300 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(BOOST_LIBS)\;protobuf\lib;$(HGSQL)\lib;$(HGAIS)\lib;$(VLD)\lib\Win32;$(HGSDK)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Sqld.lib;libprotobuf-lited.lib;libprotobufd.lib;libprotocd.lib;hgSqlOperatord.lib;hgAisDecoderd.lib;Qt5Guid.lib;hgutilsd.lib;Qt5Scriptd.lib;Qt5SerialPortd.lib;vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_SQL_LIB;QT_GUI_LIB;QT_SCRIPT_LIB;PROTOBUF_USE_DLLS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtScript;$(HGAIS)\include;$(BOOST);$(HGSDK)\include;$(VLD)\include;protobuf\include;$(HGSQL)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(HGSDK)\lib;$(VLD)\lib\Win32;$(HGAIS)\lib;$(BOOST_LIBS);protobuf\lib;$(HGSQL)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Sql.lib;libprotobuf-lite.lib;libprotobuf.lib;libprotoc.lib;hgSqlOperator.lib;hgAisDecoder.lib;Qt5Gui.lib;hgutils.lib;Qt5Script.lib;Qt5SerialPort.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AisReckoning\hgAisDeadReckoning.cpp" />
+    <ClCompile Include="AisReckoning\hgPlaneProjection.cpp" />
+    <ClCompile Include="Blowfish\BlowFish.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Blowfish\CryptTool.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Blowfish\DiskInfo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Blowfish\Encrypt.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Config\hgConfigBase.cpp" />
+    <ClCompile Include="Config\hgCPAConfig.cpp" />
+    <ClCompile Include="Config\hgReadDataBase.cpp" />
+    <ClCompile Include="Config\hgSysConfig.cpp" />
+    <ClCompile Include="db\DBAidSailHandler.cpp" />
+    <ClCompile Include="db\DBAisChangeHandler.cpp" />
+    <ClCompile Include="db\DBAlarmAreaHandler.cpp" />
+    <ClCompile Include="db\DBAlgorBackHandler.cpp" />
+    <ClCompile Include="db\DBAlgorOwnShipHandler.cpp" />
+    <ClCompile Include="db\DBAlgorTextHandler.cpp" />
+    <ClCompile Include="db\DBAlgorWarMesHandler.cpp" />
+    <ClCompile Include="db\DBAnchorAreaHandler.cpp" />
+    <ClCompile Include="db\DBAnchorReservHandler.cpp" />
+    <ClCompile Include="db\DBAnchorWatchHandler.cpp" />
+    <ClCompile Include="db\DBArpaAllHandler.cpp" />
+    <ClCompile Include="db\DBArpaTargetHandler.cpp" />
+    <ClCompile Include="db\DBAuthorizedHandler.cpp" />
+    <ClCompile Include="db\DBBerthWatchHandler.cpp" />
+    <ClCompile Include="db\DBChannelHandler.cpp" />
+    <ClCompile Include="db\DBCollisionWatchHandler.cpp" />
+    <ClCompile Include="db\DBCPAHandler.cpp" />
+    <ClCompile Include="db\DBCricleHandler.cpp" />
+    <ClCompile Include="db\DBDomainHandler.cpp" />
+    <ClCompile Include="db\DBDutyAreaHandler.cpp" />
+    <ClCompile Include="db\DBEllipseHandler.cpp" />
+    <ClCompile Include="db\DBFixedObjectHandler.cpp" />
+    <ClCompile Include="db\DBGroundWatchHandler.cpp" />
+    <ClCompile Include="db\DBGroupHandler.cpp" />
+    <ClCompile Include="db\DBHabitChartHandler.cpp" />
+    <ClCompile Include="db\DBHabitDangerHandler.cpp" />
+    <ClCompile Include="db\DBHabitSystemHandler.cpp" />
+    <ClCompile Include="db\DBHabitTarSetHandler.cpp" />
+    <ClCompile Include="db\DBHabitViewHandler.cpp" />
+    <ClCompile Include="db\DBLoginHandler.cpp" />
+    <ClCompile Include="db\DBMovementEndHandler.cpp" />
+    <ClCompile Include="db\DBNavigatChannelHandler.cpp" />
+    <ClCompile Include="db\DBNotesHandler.cpp" />
+    <ClCompile Include="db\DBPloygonHandler.cpp" />
+    <ClCompile Include="db\DBRadarImageHandler.cpp" />
+    <ClCompile Include="db\DBRegisterHandler.cpp" />
+    <ClCompile Include="db\DBReportAreaHandler.cpp" />
+    <ClCompile Include="db\DBReportLineHandler.cpp" />
+    <ClCompile Include="db\DBSaveAisHandler.cpp" />
+    <ClCompile Include="db\DBSectorHandler.cpp" />
+    <ClCompile Include="db\DBSetShipHandler.cpp" />
+    <ClCompile Include="db\DBSpeedWatchHandler.cpp" />
+    <ClCompile Include="db\DBTurnCircleHandler.cpp" />
+    <ClCompile Include="db\DBUserHandler.cpp" />
+    <ClCompile Include="db\DBWaringHandler.cpp" />
+    <ClCompile Include="db\DBWarnHistoryHandler.cpp" />
+    <ClCompile Include="frame\vtsPreprocessHandler.cpp" />
+    <ClCompile Include="frame\vtsServicePool.cpp" />
+    <ClCompile Include="frame\vtsConnection.cpp" />
+    <ClCompile Include="frame\vtsConnectionManager.cpp" />
+    <ClCompile Include="frame\vtsDatabaseHandler.cpp" />
+    <ClCompile Include="frame\vtsDBPool.cpp" />
+    <ClCompile Include="frame\vtsLog.cpp" />
+    <ClCompile Include="frame\vtsRequestHandler.cpp" />
+    <ClCompile Include="frame\vtsServer.cpp" />
+    <ClCompile Include="frame\vtsSession.cpp" />
+    <ClCompile Include="frame\vtsTimerHandler.cpp" />
+    <ClCompile Include="GeneratedFiles\Debug\moc_hgtargetmanager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_hgtargetmanager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="hgLogExpand.cpp" />
+    <ClCompile Include="LayerData\hgAidSailLayer.cpp" />
+    <ClCompile Include="LayerData\hgBaseUserLayer.cpp" />
+    <ClCompile Include="LayerData\hgChannelLayer.cpp" />
+    <ClCompile Include="LayerData\hgCricleLayer.cpp" />
+    <ClCompile Include="LayerData\hgDutyAreaLayer.cpp" />
+    <ClCompile Include="LayerData\hgFixedObjectLayer.cpp" />
+    <ClCompile Include="LayerData\hgNotesLayer.cpp" />
+    <ClCompile Include="LayerData\hgPolygonLayer.cpp" />
+    <ClCompile Include="LayerData\hgReportLineLayer.cpp" />
+    <ClCompile Include="LayerData\hgSectorLayer.cpp" />
+    <ClCompile Include="LayerData\hgShipWarningInfo.cpp" />
+    <ClCompile Include="LayerData\hgUserLayWarning.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Managers\hgAlarmManager.cpp" />
+    <ClCompile Include="Managers\hgCellularManager.cpp" />
+    <ClCompile Include="Managers\hgComManager.cpp" />
+    <ClCompile Include="Managers\hgConfigManager.cpp" />
+    <ClCompile Include="Managers\hgDataManager.cpp" />
+    <ClCompile Include="Managers\hgLayerDataManager.cpp" />
+    <ClCompile Include="Managers\hgSendManager.cpp" />
+    <ClCompile Include="Managers\hgTargetManager.cpp" />
+    <ClCompile Include="Managers\hgWarningSetManager.cpp" />
+    <ClCompile Include="message\adduserlay.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\aidsail.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\AlgorithmMode.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\channel.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\channelwarinfo.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\createUser.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\cricle.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\deviceinfo.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\dutyarea.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\ellipse.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\fixedobject.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\group.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAisChange.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAisMessage.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAlarmArea.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAlgorBack.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAlgorOwnShip.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAlgorText.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAlgorWar.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAnchorAreaMes.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAnchorReserv.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAnchorWatch.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgArpaAll.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgAuthorized.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgBerthWatch.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgCellularShip.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgChannelMsg.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgCollisionWatch.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgCPA.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgCPAData.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgCPAWarning.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgDeleteTarget.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgDomain.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgEarlyWarnMes.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgFuseSet.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgGPSCom.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgGPSData.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgGroundWatch.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgHeartBeat.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgMovementEnd.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgNavigatChannel.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgPlayBack.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgPolygonMes.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgPositionPrediction.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgReportArea.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgServerMode.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgSetShip.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgShipAisMessage.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgShipArea.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgShipHdg.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgSpeedWatch.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgTurnCircle.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgWarningMes.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\hgWarningType.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\IdentityPack.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\login.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\notes.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\ploygon.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\PointMes.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\RadarImagePack.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\register.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\reportline.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\sector.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\test.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\user.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\userhabit.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\Voltages.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\waring.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="message\waringinfo.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="OverLoad.cpp" />
+    <ClCompile Include="request\AidSailHandler.cpp" />
+    <ClCompile Include="request\ChannelHandler.cpp" />
+    <ClCompile Include="request\CricleHandler.cpp" />
+    <ClCompile Include="request\DutyAreaHandler.cpp" />
+    <ClCompile Include="request\EllipseHandler.cpp" />
+    <ClCompile Include="request\FixedObjectHandler.cpp" />
+    <ClCompile Include="request\GroupHandler.cpp" />
+    <ClCompile Include="request\hgAisChangeHandler.cpp" />
+    <ClCompile Include="request\hgAisTextHandler.cpp" />
+    <ClCompile Include="request\hgAlarmAreaHandler.cpp" />
+    <ClCompile Include="request\hgAlgorBackHandler.cpp" />
+    <ClCompile Include="request\hgAlgorithmModeHandler.cpp" />
+    <ClCompile Include="request\hgAlgorOwnShipHandler.cpp" />
+    <ClCompile Include="request\hgAlgorTextHandler.cpp" />
+    <ClCompile Include="request\hgAlgorWarMesHandler.cpp" />
+    <ClCompile Include="request\hgAnchorAreaHandler.cpp" />
+    <ClCompile Include="request\hgAnchorReservHandler.cpp" />
+    <ClCompile Include="request\hgAnchorWatchHandler.cpp" />
+    <ClCompile Include="request\hgArpaAllHandler.cpp" />
+    <ClCompile Include="request\hgArpaTargetHandler.cpp" />
+    <ClCompile Include="request\hgAuthorizedHandler.cpp" />
+    <ClCompile Include="request\hgBerthWatchHandler.cpp" />
+    <ClCompile Include="request\hgCellChannelHandler.cpp" />
+    <ClCompile Include="request\hgCellShipHandler.cpp" />
+    <ClCompile Include="request\hgCollisionWatchHandler.cpp" />
+    <ClCompile Include="request\hgCPAHandler.cpp" />
+    <ClCompile Include="request\hgCPAWarningHandler.cpp" />
+    <ClCompile Include="request\hgDeleteTargetHandler.cpp" />
+    <ClCompile Include="request\hgDomainHandler.cpp" />
+    <ClCompile Include="request\hgDownLineHandler.cpp" />
+    <ClCompile Include="request\hgEarlyWarnHandler.cpp" />
+    <ClCompile Include="request\hgFuseSetHandler.cpp" />
+    <ClCompile Include="request\hgGPSComHandler.cpp" />
+    <ClCompile Include="request\hgGPSDataHandler.cpp" />
+    <ClCompile Include="request\hgGroundWatchHandler.cpp" />
+    <ClCompile Include="request\hgHabitChartHandler.cpp" />
+    <ClCompile Include="request\hgHabitDangerHandler.cpp" />
+    <ClCompile Include="request\hgHabitSystemHandler.cpp" />
+    <ClCompile Include="request\hgHabitTarSetHandler.cpp" />
+    <ClCompile Include="request\hgHabitViewHandler.cpp" />
+    <ClCompile Include="request\hgHeartBeatHandler.cpp" />
+    <ClCompile Include="request\hgIdentityHandler.cpp" />
+    <ClCompile Include="request\hgMovementEndHandler.cpp" />
+    <ClCompile Include="request\hgNavigatChannelHandler.cpp" />
+    <ClCompile Include="request\hgPositionHandler.cpp" />
+    <ClCompile Include="request\hgRadarAISStateHandler.cpp" />
+    <ClCompile Include="request\hgRadarAskHandler.cpp" />
+    <ClCompile Include="request\hgRadarHeaderHandler.cpp" />
+    <ClCompile Include="request\hgRadarImageHandler.cpp" />
+    <ClCompile Include="request\hgReportAreaHandler.cpp" />
+    <ClCompile Include="request\hgServerModeHandler.cpp" />
+    <ClCompile Include="request\hgSetShipHandler.cpp" />
+    <ClCompile Include="request\hgShipAreaHandler.cpp" />
+    <ClCompile Include="request\hgShipHdgHandler.cpp" />
+    <ClCompile Include="request\hgSimulationHandler.cpp" />
+    <ClCompile Include="request\hgSpeedWatchHandler.cpp" />
+    <ClCompile Include="request\hgTargetHandler.cpp" />
+    <ClCompile Include="request\hgTurnCircleHandler.cpp" />
+    <ClCompile Include="request\hgWarningMesHandler.cpp" />
+    <ClCompile Include="request\LoginHandler.cpp" />
+    <ClCompile Include="request\NotesHandler.cpp" />
+    <ClCompile Include="request\PloygonHandler.cpp" />
+    <ClCompile Include="request\RegisterHandler.cpp" />
+    <ClCompile Include="request\ReportLineHandler.cpp" />
+    <ClCompile Include="request\SectorHandler.cpp" />
+    <ClCompile Include="request\UserHandler.cpp" />
+    <ClCompile Include="request\VoltagesHandler.cpp" />
+    <ClCompile Include="request\WaringHandler.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="timer\hgAnchorAreaTimerHandler.cpp" />
+    <ClCompile Include="timer\hgAnchorReservTimerHandler.cpp" />
+    <ClCompile Include="timer\hgAnchorWatchTimerHandler.cpp" />
+    <ClCompile Include="timer\hgBerthWatchTimerHandler.cpp" />
+    <ClCompile Include="timer\hgChannelTimerHandler.cpp" />
+    <ClCompile Include="timer\hgCollisionWatchTimerHandler.cpp" />
+    <ClCompile Include="timer\hgCrashTimerHandler.cpp" />
+    <ClCompile Include="timer\hgCricleTimerHandler.cpp" />
+    <ClCompile Include="timer\hgDBHandler.cpp" />
+    <ClCompile Include="timer\hgDomainTimerHandler.cpp" />
+    <ClCompile Include="timer\hgDutyAreaTimerHandler.cpp" />
+    <ClCompile Include="timer\hgEllipseTimerHandler.cpp" />
+    <ClCompile Include="timer\hgFuseTimerHandler.cpp" />
+    <ClCompile Include="timer\hgGroundWatchTimerHandler.cpp" />
+    <ClCompile Include="timer\hgLostTimerHandler.cpp" />
+    <ClCompile Include="timer\hgMovementEndTimerHandler.cpp" />
+    <ClCompile Include="timer\hgNavigatChannelTimerHandler.cpp" />
+    <ClCompile Include="timer\hgPolygonTimerHandler.cpp" />
+    <ClCompile Include="timer\hgPortTimerHandler.cpp" />
+    <ClCompile Include="timer\hgRadarAisTimerHandler.cpp" />
+    <ClCompile Include="timer\hgReportAreaTimerHandler.cpp" />
+    <ClCompile Include="timer\hgReportTimerHandler.cpp" />
+    <ClCompile Include="timer\hgSectorTimerHandler.cpp" />
+    <ClCompile Include="timer\hgSimulationTimerHandler.cpp" />
+    <ClCompile Include="timer\hgSpeedWatchTimerHandler.cpp" />
+    <ClCompile Include="timer\hgSQLTimerHandler.cpp" />
+    <ClCompile Include="timer\hgTrackPredictTimerHandler.cpp" />
+    <ClCompile Include="timer\hgTurnCircleTimerHandler.cpp" />
+    <ClCompile Include="timer\ReadElementTimerHandler.cpp" />
+    <ClCompile Include="timer\TestTimerHandler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AisReckoning\hgAisDeadReckoning.h" />
+    <ClInclude Include="AisReckoning\hgPlaneProjection.h" />
+    <ClInclude Include="Blowfish\Blowfish.h" />
+    <ClInclude Include="Blowfish\CryptTool.h" />
+    <ClInclude Include="Blowfish\DiskInfo.h" />
+    <ClInclude Include="blowfish\encrypt.h" />
+    <ClInclude Include="config\hgconfigbase.h" />
+    <ClInclude Include="Config\hgCPAConfig.h" />
+    <ClInclude Include="Config\hgReadDataBase.h" />
+    <ClInclude Include="config\hgsysconfig.h" />
+    <ClInclude Include="db\DBAidSailHandler.h" />
+    <ClInclude Include="db\DBAisChangeHandler.h" />
+    <ClInclude Include="db\DBAlarmAreaHandler.h" />
+    <ClInclude Include="db\DBAlgorBackHandler.h" />
+    <ClInclude Include="db\DBAlgorOwnShipHandler.h" />
+    <ClInclude Include="db\DBAlgorTextHandler.h" />
+    <ClInclude Include="db\DBAlgorWarMesHandler.h" />
+    <ClInclude Include="db\DBAnchorAreaHandler.h" />
+    <ClInclude Include="db\DBAnchorReservHandler.h" />
+    <ClInclude Include="db\DBAnchorWatchHandler.h" />
+    <ClInclude Include="db\DBArpaAllHandler.h" />
+    <ClInclude Include="db\DBArpaTargetHandler.h" />
+    <ClInclude Include="db\DBAuthorizedHandler.h" />
+    <ClInclude Include="db\DBBerthWatchHandler.h" />
+    <ClInclude Include="db\dbchannelhandler.h" />
+    <ClInclude Include="db\DBCollisionWatchHandler.h" />
+    <ClInclude Include="db\DBCPAHandler.h" />
+    <ClInclude Include="db\DBCricleHandler.h" />
+    <ClInclude Include="db\DBDomainHandler.h" />
+    <ClInclude Include="db\DBDutyAreaHandler.h" />
+    <ClInclude Include="db\DBEllipseHandler.h" />
+    <ClInclude Include="db\DBFixedObjectHandler.h" />
+    <ClInclude Include="db\DBGroundWatchHandler.h" />
+    <ClInclude Include="db\DBGroupHandler.h" />
+    <ClInclude Include="db\DBHabitChartHandler.h" />
+    <ClInclude Include="db\DBHabitDangerHandler.h" />
+    <ClInclude Include="db\DBHabitSystemHandler.h" />
+    <ClInclude Include="db\DBHabitTarSetHandler.h" />
+    <ClInclude Include="db\DBHabitViewHandler.h" />
+    <ClInclude Include="db\DBLoginHandler.h" />
+    <ClInclude Include="db\DBMovementEndHandler.h" />
+    <ClInclude Include="db\DBNavigatChannelHandler.h" />
+    <ClInclude Include="db\DBNotesHandler.h" />
+    <ClInclude Include="db\DBPloygonHandler.h" />
+    <ClInclude Include="db\DBRadarImageHandler.h" />
+    <ClInclude Include="db\DBRegisterHandler.h" />
+    <ClInclude Include="db\DBReportAreaHandler.h" />
+    <ClInclude Include="db\DBReportLineHandler.h" />
+    <ClInclude Include="db\DBSaveAisHandler.h" />
+    <ClInclude Include="db\DBSectorHandler.h" />
+    <ClInclude Include="db\DBSetShipHandler.h" />
+    <ClInclude Include="db\DBSpeedWatchHandler.h" />
+    <ClInclude Include="db\DBTurnCircleHandler.h" />
+    <ClInclude Include="db\DBUserHandler.h" />
+    <ClInclude Include="db\DBWaringHandler.h" />
+    <ClInclude Include="db\DBWarnHistoryHandler.h" />
+    <ClInclude Include="db\hgDBAisHandler.h" />
+    <ClInclude Include="frame\IOServicePool.h" />
+    <ClInclude Include="frame\vtsConnection.h" />
+    <ClInclude Include="frame\vtsConnectionManager.h" />
+    <ClInclude Include="frame\vtsDatabaseHandler.h" />
+    <ClInclude Include="frame\vtsDBPool.h" />
+    <ClInclude Include="frame\vtsLog.h" />
+    <ClInclude Include="frame\vtsMessage.h" />
+    <ClInclude Include="frame\vtsPreprocessHandler.h" />
+    <ClInclude Include="frame\vtsRequestHandler.h" />
+    <ClInclude Include="frame\vtsServer.h" />
+    <ClInclude Include="frame\vtsServerBase.h" />
+    <ClInclude Include="frame\vtsservicepool.h" />
+    <ClInclude Include="frame\vtsSession.h" />
+    <ClInclude Include="frame\vtsTimerHandler.h" />
+    <ClInclude Include="hgLogExpand.h" />
+    <ClInclude Include="hgMyMap.h" />
+    <ClInclude Include="hgOnlyInstance.h" />
+    <ClInclude Include="layerdata\hgaidsaillayer.h" />
+    <ClInclude Include="LayerData\hgBaseUserLayer.h" />
+    <ClInclude Include="layerdata\hgchannellayer.h" />
+    <ClInclude Include="layerdata\hgcriclelayer.h" />
+    <ClInclude Include="layerdata\hgdutyarealayer.h" />
+    <ClInclude Include="layerdata\hgfixedobjectlayer.h" />
+    <ClInclude Include="layerdata\hgnoteslayer.h" />
+    <ClInclude Include="layerdata\hgpolygonlayer.h" />
+    <ClInclude Include="layerdata\hgreportlinelayer.h" />
+    <ClInclude Include="layerdata\hgsectorlayer.h" />
+    <ClInclude Include="layerdata\hgshipwarninginfo.h" />
+    <ClInclude Include="layerdata\hguserlaywarning.h" />
+    <ClInclude Include="Managers\hgAlarmManager.h" />
+    <ClInclude Include="Managers\hgCellularManager.h" />
+    <ClInclude Include="managers\hgcommanager.h" />
+    <ClInclude Include="managers\hgconfigmanager.h" />
+    <ClInclude Include="managers\hgdatamanager.h" />
+    <ClInclude Include="managers\hgelementmanager.h" />
+    <CustomBuild Include="managers\hgtargetmanager.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing hgtargetmanager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_CORE_LIB -DQT_SQL_LIB -DPROTOBUF_USE_DLLS -DQT_GUI_LIB -DQT_SCRIPT_LIB -DHG_DEBUG -D%(PreprocessorDefinitions)  "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtSql" "-I$(BOOST)" "-I.\protobuf\include" "-I$(HGSQL)\include" "-I$(HGAIS)\include" "-I$(HGSDK)\include" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtScript" "-I$(VLD)\include" "-I$(QTDIR)\include\QtSerialPort" "-fStdAfx.h" "-f../../managers/%(Filename)%(Extension)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing hgtargetmanager.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_SCRIPT_LIB -DPROTOBUF_USE_DLLS -D%(PreprocessorDefinitions)  "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)" "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtSql" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtScript" "-I$(HGAIS)\include" "-I$(BOOST)" "-I$(HGSDK)\include" "-I$(VLD)\include" "-I.\protobuf\include" "-I$(HGSQL)\include"</Command>
+    </CustomBuild>
+    <ClInclude Include="managers\hglayerdatamanager.h" />
+    <ClInclude Include="Managers\hgSendManager.h" />
+    <ClInclude Include="managers\hgwarningsetmanager.h" />
+    <ClInclude Include="message\adduserlay.pb.h" />
+    <ClInclude Include="message\aidsail.pb.h" />
+    <ClInclude Include="message\AlgorithmMode.pb.h" />
+    <ClInclude Include="message\channel.pb.h" />
+    <ClInclude Include="message\channelwarinfo.pb.h" />
+    <ClInclude Include="message\createUser.pb.h" />
+    <ClInclude Include="message\cricle.pb.h" />
+    <ClInclude Include="message\deviceinfo.pb.h" />
+    <ClInclude Include="message\dutyarea.pb.h" />
+    <ClInclude Include="message\ellipse.pb.h" />
+    <ClInclude Include="message\fixedobject.pb.h" />
+    <ClInclude Include="message\group.pb.h" />
+    <ClInclude Include="message\hgAisChange.pb.h" />
+    <ClInclude Include="message\hgAisMessage.pb.h" />
+    <ClInclude Include="message\hgAlarmArea.pb.h" />
+    <ClInclude Include="message\hgAlgorBack.pb.h" />
+    <ClInclude Include="message\hgAlgorOwnShip.pb.h" />
+    <ClInclude Include="message\hgAlgorText.pb.h" />
+    <ClInclude Include="message\hgAlgorWar.pb.h" />
+    <ClInclude Include="message\hgAnchorAreaMes.pb.h" />
+    <ClInclude Include="message\hgAnchorReserv.pb.h" />
+    <ClInclude Include="message\hgAnchorWatch.pb.h" />
+    <ClInclude Include="message\hgArpaAll.pb.h" />
+    <ClInclude Include="message\hgAuthorized.pb.h" />
+    <ClInclude Include="message\hgBerthWatch.pb.h" />
+    <ClInclude Include="message\hgCellularShip.pb.h" />
+    <ClInclude Include="message\hgChannelMsg.pb.h" />
+    <ClInclude Include="message\hgCollisionWatch.pb.h" />
+    <ClInclude Include="message\hgCPA.pb.h" />
+    <ClInclude Include="message\hgCPAData.pb.h" />
+    <ClInclude Include="message\hgCPAWarning.pb.h" />
+    <ClInclude Include="message\hgDeleteTarget.pb.h" />
+    <ClInclude Include="message\hgDomain.pb.h" />
+    <ClInclude Include="message\hgEarlyWarnMes.pb.h" />
+    <ClInclude Include="message\hgFuseSet.pb.h" />
+    <ClInclude Include="message\hgGPSCom.pb.h" />
+    <ClInclude Include="message\hgGPSData.pb.h" />
+    <ClInclude Include="message\hgGroundWatch.pb.h" />
+    <ClInclude Include="message\hgHeartBeat.pb.h" />
+    <ClInclude Include="message\hgMovementEnd.pb.h" />
+    <ClInclude Include="message\hgNavigatChannel.pb.h" />
+    <ClInclude Include="message\hgPlayBack.pb.h" />
+    <ClInclude Include="message\hgPolygonMes.pb.h" />
+    <ClInclude Include="message\hgPositionPrediction.pb.h" />
+    <ClInclude Include="message\hgReportArea.pb.h" />
+    <ClInclude Include="message\hgServerMode.pb.h" />
+    <ClInclude Include="message\hgSetShip.pb.h" />
+    <ClInclude Include="message\hgShipAisMessage.pb.h" />
+    <ClInclude Include="message\hgShipArea.pb.h" />
+    <ClInclude Include="message\hgShipHdg.pb.h" />
+    <ClInclude Include="message\hgSpeedWatch.pb.h" />
+    <ClInclude Include="message\hgTurnCircle.pb.h" />
+    <ClInclude Include="message\hgWarningMes.pb.h" />
+    <ClInclude Include="message\hgWarningType.pb.h" />
+    <ClInclude Include="message\IdentityPack.pb.h" />
+    <ClInclude Include="message\login.pb.h" />
+    <ClInclude Include="message\notes.pb.h" />
+    <ClInclude Include="message\ploygon.pb.h" />
+    <ClInclude Include="message\PointMes.pb.h" />
+    <ClInclude Include="message\RadarImagePack.pb.h" />
+    <ClInclude Include="message\register.pb.h" />
+    <ClInclude Include="message\reportline.pb.h" />
+    <ClInclude Include="message\sector.pb.h" />
+    <ClInclude Include="message\test.pb.h" />
+    <ClInclude Include="message\user.pb.h" />
+    <ClInclude Include="message\userhabit.pb.h" />
+    <ClInclude Include="message\Voltages.pb.h" />
+    <ClInclude Include="message\waring.pb.h" />
+    <ClInclude Include="message\waringinfo.pb.h" />
+    <ClInclude Include="OverLoad.h" />
+    <ClInclude Include="request\AidSailHandler.h" />
+    <ClInclude Include="request\ChannelHandler.h" />
+    <ClInclude Include="request\CricleHandler.h" />
+    <ClInclude Include="request\DutyAreaHandler.h" />
+    <ClInclude Include="request\EllipseHandler.h" />
+    <ClInclude Include="request\FixedObjectHandler.h" />
+    <ClInclude Include="request\GroupHandler.h" />
+    <ClInclude Include="request\hgAisChangeHandler.h" />
+    <ClInclude Include="request\hgAisHandler.h" />
+    <ClInclude Include="request\hgAisTextHandler.h" />
+    <ClInclude Include="request\hgAlarmAreaHandler.h" />
+    <ClInclude Include="request\hgAlgorBackHandler.h" />
+    <ClInclude Include="request\hgAlgorithmModeHandler.h" />
+    <ClInclude Include="request\hgAlgorOwnShipHandler.h" />
+    <ClInclude Include="request\hgAlgorTextHandler.h" />
+    <ClInclude Include="request\hgAlgorWarMesHandler.h" />
+    <ClInclude Include="request\hgAnchorAreaHandler.h" />
+    <ClInclude Include="request\hgAnchorReservHandler.h" />
+    <ClInclude Include="request\hgAnchorWatchHandler.h" />
+    <ClInclude Include="request\hgArpaAllHandler.h" />
+    <ClInclude Include="request\hgArpaTargetHandler.h" />
+    <ClInclude Include="request\hgAuthorizedHandler.h" />
+    <ClInclude Include="request\hgBerthWatchHandler.h" />
+    <ClInclude Include="request\hgCellChannelHandler.h" />
+    <ClInclude Include="request\hgCellShipHandler.h" />
+    <ClInclude Include="request\hgCollisionWatchHandler.h" />
+    <ClInclude Include="request\hgCPAHandler.h" />
+    <ClInclude Include="request\hgCPAWarningHandler.h" />
+    <ClInclude Include="request\hgDeleteTargetHandler.h" />
+    <ClInclude Include="request\hgDomainHandler.h" />
+    <ClInclude Include="request\hgDownLineHandler.h" />
+    <ClInclude Include="request\hgEarlyWarnHandler.h" />
+    <ClInclude Include="request\hgFuseSetHandler.h" />
+    <ClInclude Include="request\hgGPSComHandler.h" />
+    <ClInclude Include="request\hgGPSDataHandler.h" />
+    <ClInclude Include="request\hgGroundWatchHandler.h" />
+    <ClInclude Include="request\hgHabitChartHandler.h" />
+    <ClInclude Include="request\hgHabitDangerHandler.h" />
+    <ClInclude Include="request\hgHabitSystemHandler.h" />
+    <ClInclude Include="request\hgHabitTarSetHandler.h" />
+    <ClInclude Include="request\hgHabitViewHandler.h" />
+    <ClInclude Include="request\hgHeartBeatHandler.h" />
+    <ClInclude Include="request\hgIdentityHandler.h" />
+    <ClInclude Include="request\hgMovementEndHandler.h" />
+    <ClInclude Include="request\hgNavigatChannelHandler.h" />
+    <ClInclude Include="request\hgPositionHandler.h" />
+    <ClInclude Include="request\hgRadarAISStateHandler.h" />
+    <ClInclude Include="request\hgRadarAskHandler.h" />
+    <ClInclude Include="request\hgRadarHeaderHandler.h" />
+    <ClInclude Include="request\hgRadarImageHandler.h" />
+    <ClInclude Include="request\hgReportAreaHandler.h" />
+    <ClInclude Include="request\hgServerModeHandler.h" />
+    <ClInclude Include="request\hgSetShipHandler.h" />
+    <ClInclude Include="request\hgShipAreaHandler.h" />
+    <ClInclude Include="request\hgShipHdgHandler.h" />
+    <ClInclude Include="request\hgSimulationHandler.h" />
+    <ClInclude Include="request\hgSpeedWatchHandler.h" />
+    <ClInclude Include="request\hgTargetHandler.h" />
+    <ClInclude Include="request\hgTurnCircleHandler.h" />
+    <ClInclude Include="request\hgWarningMesHandler.h" />
+    <ClInclude Include="request\LoginHandler.h" />
+    <ClInclude Include="request\NotesHandler.h" />
+    <ClInclude Include="request\PloygonHandler.h" />
+    <ClInclude Include="request\RegisterHandler.h" />
+    <ClInclude Include="request\ReportLineHandler.h" />
+    <ClInclude Include="request\SectorHandler.h" />
+    <ClInclude Include="request\UserHandler.h" />
+    <ClInclude Include="request\VoltagesHandler.h" />
+    <ClInclude Include="request\WaringHandler.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="timer\AISDutyAreaTimerHandler.h" />
+    <ClInclude Include="timer\hgAnchorAreaTimerHandler.h" />
+    <ClInclude Include="timer\hgAnchorReservTimerHandler.h" />
+    <ClInclude Include="timer\hgAnchorWatchTimerHandler.h" />
+    <ClInclude Include="timer\hgBerthWatchTimerHandler.h" />
+    <ClInclude Include="timer\hgChannelTimerHandler.h" />
+    <ClInclude Include="timer\hgCollisionWatchTimerHandler.h" />
+    <ClInclude Include="timer\hgCrashTimerHandler.h" />
+    <ClInclude Include="timer\hgCricleTimerHandler.h" />
+    <ClInclude Include="timer\hgDBHandler.h" />
+    <ClInclude Include="timer\hgDomainTimerHandler.h" />
+    <ClInclude Include="timer\hgDutyAreaTimerHandler.h" />
+    <ClInclude Include="timer\hgEllipseTimerHandler.h" />
+    <ClInclude Include="timer\hgFuseTimerHandler.h" />
+    <ClInclude Include="timer\hgGroundWatchTimerHandler.h" />
+    <ClInclude Include="timer\hgLostTimerHandler.h" />
+    <ClInclude Include="timer\hgMovementEndTimerHandler.h" />
+    <ClInclude Include="timer\hgNavigatChannelTimerHandler.h" />
+    <ClInclude Include="timer\hgPolygonTimerHandler.h" />
+    <ClInclude Include="timer\hgPortTimerHandler.h" />
+    <ClInclude Include="timer\hgRadarAisTimerHandler.h" />
+    <ClInclude Include="timer\hgReportAreaTimerHandler.h" />
+    <ClInclude Include="timer\hgReportTimerHandler.h" />
+    <ClInclude Include="timer\hgSectorTimerHandler.h" />
+    <ClInclude Include="timer\hgSimulationTimerHandler.h" />
+    <ClInclude Include="timer\hgSpeedWatchTimerHandler.h" />
+    <ClInclude Include="timer\hgSQLTimerHandler.h" />
+    <ClInclude Include="timer\hgTrackPredictTimerHandler.h" />
+    <ClInclude Include="timer\hgTurnCircleTimerHandler.h" />
+    <ClInclude Include="timer\ReadElementTimerHandler.h" />
+    <ClInclude Include="timer\TestTimerHandler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pro\adduserlay.proto" />
+    <None Include="pro\aidsail.proto" />
+    <None Include="pro\AlgorithmMode.proto" />
+    <None Include="pro\channel.proto" />
+    <None Include="pro\channelwarinfo.proto" />
+    <None Include="pro\createUser.proto" />
+    <None Include="pro\cricle.proto" />
+    <None Include="pro\deviceinfo.proto" />
+    <None Include="pro\dutyarea.proto" />
+    <None Include="pro\ellipse.proto" />
+    <None Include="pro\fixedobject.proto" />
+    <None Include="pro\group.proto" />
+    <None Include="pro\hgAisChange.proto" />
+    <None Include="pro\hgAisMessage.proto" />
+    <None Include="pro\hgAlarmArea.proto" />
+    <None Include="pro\hgAlgorBack.proto" />
+    <None Include="pro\hgAlgorOwnShip.proto" />
+    <None Include="pro\hgAlgorText.proto" />
+    <None Include="pro\hgAlgorWar.proto" />
+    <None Include="pro\hgAnchorAreaMes.proto" />
+    <None Include="pro\hgAnchorReserv.proto" />
+    <None Include="pro\hgAnchorWatch.proto" />
+    <None Include="pro\hgArpaAll.proto" />
+    <None Include="pro\hgAuthorized.proto" />
+    <None Include="pro\hgBerthWatch.proto" />
+    <None Include="pro\hgCellularShip.proto" />
+    <None Include="pro\hgChannelMsg.proto" />
+    <None Include="pro\hgCollisionWatch.proto" />
+    <None Include="pro\hgCPA.proto" />
+    <None Include="pro\hgCPAData.proto" />
+    <None Include="pro\hgCPAWarning.proto" />
+    <None Include="pro\hgDeleteTarget.proto" />
+    <None Include="pro\hgDomain.proto" />
+    <None Include="pro\hgEarlyWarnMes.proto" />
+    <None Include="pro\hgFuseSet.proto" />
+    <None Include="pro\hgGPSData.proto" />
+    <None Include="pro\hgGroundWatch.proto" />
+    <None Include="pro\hgHeartBeat.proto" />
+    <None Include="pro\hgMovementEnd.proto" />
+    <None Include="pro\hgNavigatChannel.proto" />
+    <None Include="pro\hgPlayBack.proto" />
+    <None Include="pro\hgPolygonMes.proto" />
+    <None Include="pro\hgPositionPrediction.proto" />
+    <None Include="pro\hgReportArea.proto" />
+    <None Include="pro\hgServerMode.proto" />
+    <None Include="pro\hgSetShip.proto" />
+    <None Include="pro\hgShipAisMessage.proto" />
+    <None Include="pro\hgShipArea.proto" />
+    <None Include="pro\hgShipHdg.proto" />
+    <None Include="pro\hgSpeedWatch.proto" />
+    <None Include="pro\hgTurnCircle.proto" />
+    <None Include="pro\hgWarningMes.proto" />
+    <None Include="pro\hgWarningType.proto" />
+    <None Include="pro\IdentityPack.proto" />
+    <None Include="pro\login.proto" />
+    <None Include="pro\notes.proto" />
+    <None Include="pro\ploygon.proto" />
+    <None Include="pro\PointMes.proto" />
+    <None Include="pro\proto.bat" />
+    <None Include="pro\protoc.exe" />
+    <None Include="pro\RadarImagePack.proto" />
+    <None Include="pro\register.proto" />
+    <None Include="pro\reportline.proto" />
+    <None Include="pro\sector.proto" />
+    <None Include="pro\test.proto" />
+    <None Include="pro\user.proto" />
+    <None Include="pro\userhabit.proto" />
+    <None Include="pro\Voltages.proto" />
+    <None Include="pro\waring.proto" />
+    <None Include="pro\waringinfo.proto" />
+    <None Include="vtsServer.bat" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" RccDir=".\GeneratedFiles" lupdateOnBuild="0" lupdateOptions="" lreleaseOptions="" Qt5Version_x0020_Win32="msvc2010" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

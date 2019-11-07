@@ -1,0 +1,28 @@
+syntax = "proto3";
+import "waringinfo.proto";
+message CricleRequest
+{
+    int32 type = 1;//操作类型
+    string ID = 2;
+    string name = 3;
+    double lat = 4;
+    double lon = 5;
+    double radius = 6;
+    int32 linestyle = 7;
+    int32 fullstyle = 8;
+    int32 linewidth = 9;
+    repeated string waringID = 10;
+    string waringtype = 11;
+    string drawman = 12;
+    bool isshare = 13;
+    string linecolor = 14;
+    string fullcolor = 15;
+    repeated WaringInfo info = 16;
+}
+
+message CricleRepsone
+{
+    int32 type = 1;//操作类型
+    string result = 2;
+    repeated CricleRequest cricles = 3;
+}

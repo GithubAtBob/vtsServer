@@ -1,0 +1,21 @@
+syntax="proto3";
+
+enum AlgorithmModeType
+{
+	EarlyModel = 0;
+	ManualModel = 1;//手动
+	AutoModel = 2;//自动
+	NoneModel = 3;//未启动
+	AskModel = 4;//获取预警模式
+	SetModel = 5;//设置自动模式参数
+    SetManualModel = 6;//设置为手动模式
+    SetAutoModel = 7;//设置为自动模式
+}
+
+message hgAlgorithmMode
+{
+	int32 mode = 1;//预警服务器启动模式
+	double alarm1 = 2;
+	double alarm2 = 3;
+	double alarm3 = 4;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+import "hgAisMessage.proto";
+message hgAlgorBackRequest
+{
+    string guid = 1;
+    repeated int64 begintime = 2;
+    repeated int64 endtime = 3;
+    string ownMMSI = 4;
+    string ownRadarID = 5;
+    string targetMMSI = 6;
+    string targetRadarID = 7;
+}
+
+message hgAlgorBackRepsone
+{
+    string guid = 1;
+    repeated hgAisMessage own = 2;
+    repeated hgAisMessage target = 3;
+    repeated int64 time = 4;
+}

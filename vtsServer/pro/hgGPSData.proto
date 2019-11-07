@@ -1,0 +1,21 @@
+syntax = "proto3";
+enum hgGPSDataType
+{
+	GPSRMC = 0;
+	GPSGGA = 1;
+    GPSHDT = 2;
+    GPSHDM = 3;
+}
+
+message hgGPSData
+{
+    hgGPSDataType type = 1;//数据包类型
+    int64 time = 2;
+    double lat = 3;
+    double lon = 4;
+    bool state = 5;
+    double speed = 6;
+    double course = 7;
+    double hdg = 8;
+    string mmsi = 9;
+}

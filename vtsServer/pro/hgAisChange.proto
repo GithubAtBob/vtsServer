@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+message hgAisChange
+{
+	string MMSI = 1;		// 用户ID
+	int32 Class = 2;		// 转发指示器
+	int32 IMO = 3;			// IMO号码
+	string CallSign = 4;	// 呼号             
+	string EnShipName = 5;	// 船名
+	string ChShipName = 6;	// 船名
+	string ShipType = 7;	// 船型与货物种类
+	string Nationality = 8; //国籍
+	int32 DimA = 9;
+	int32 DimB = 10;
+	int32 DimC = 11;
+	int32 DimD = 12;
+	string Note = 13;
+
+}
+
+message hgAisChangeRepsone
+{
+    string result = 1;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "hgWarningType.proto";
+
+message hgCPAWarning
+{
+
+    string WarningID = 1;  //警告类型
+    string WarningGUID = 2; //数据包唯一标识符
+    int32 WarningPriority = 3;//优先级
+    string WarningName = 4;
+    string MMSI = 5;			// 船号ID
+    string TargetMMSI = 6;
+    int64 WarningTime = 7; //报警时间
+    
+    string ShipName = 8;
+    string CallSign = 9;
+    string ShipType = 10;
+    double SOG = 11;
+    double CPA = 12;
+    double TCPA = 13;
+    double RelativeBear =14;
+    double Distance = 15;
+    double ReciprocalBear = 16;
+    
+    
+    hgWarningType WarningType = 17;
+}
+
+

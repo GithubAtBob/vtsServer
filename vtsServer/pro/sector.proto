@@ -1,0 +1,30 @@
+syntax = "proto3";
+import "waringinfo.proto";
+message SectorRequest
+{
+    int32 type = 1;//操作类型
+    string ID = 2;
+    string name = 3;
+    double lat = 4;
+    double lon = 5;
+    double radius = 6;
+    double beginangle = 7;
+    double endangle = 8;
+    int32 linestyle = 9;
+    int32 fullstyle = 10;
+    int32 linewidth = 11;
+    repeated string waringID = 12;
+    string waringtype = 13;
+    string drawman = 14;
+    bool isshare = 15;
+    string linecolor = 16;
+    string fullcolor = 17;
+    repeated WaringInfo info = 18;
+}
+
+message SectorRepsone
+{
+    int32 type = 1;//操作类型
+    string result = 2;
+    repeated SectorRequest sectors = 3;
+}

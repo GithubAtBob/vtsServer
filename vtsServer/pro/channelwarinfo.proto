@@ -1,0 +1,31 @@
+syntax = "proto3";
+message ChannelWarInfo
+{
+    double Depth = 1;
+    double MinBorder = 2;
+    double MaxBorder = 3;
+    double MinAngle = 4;
+    double MaxAngle = 5;
+    double MaxLong = 6;
+    string EnterType = 7; 
+    //向前
+    string fCourse = 8;
+    double fAngle = 9;
+    double fMinSpeed = 10;
+    double fMaxSpeed = 11;
+    double fMinSpeedTime = 12;
+    double fMaxSpeedTime = 13;
+    double fEnDist = 14;
+    double fDisEnDist = 15;
+    double fSailEnDist = 16;
+    //向后
+    string bCourse = 17;
+    double bAngle = 18;
+    double bMinSpeed = 19;
+    double bMaxSpeed = 20;
+    double bMinSpeedTime = 21;
+    double bMaxSpeedTime = 22;
+    double bEnDist = 23;
+    double bDisEnDist = 24;
+    double bSailEnDist = 25;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message hgSetShip
+{
+	string MMSI = 1;
+	bool SetShip = 2;
+  string ShipType = 3;
+  double ShipLength = 4;
+  double ShipWidth = 5;
+}
+
+message hgSetShipRepsone
+{
+
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+message hgShipHdg
+{
+    string MMSI = 1;
+    int32 type = 2;	//0 镇江方向  1 扬州方向
+}

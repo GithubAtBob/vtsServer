@@ -1,0 +1,19 @@
+syntax="proto3";
+
+enum IdentityType
+{
+	UserLogin = 0;//客服端登入
+	ServerLogin = 1;//服务器登入
+	UserLogout = 2;//客服端注销
+	ServerLogout = 3;//服务端注销
+	ShipLogin = 4;//船端登入
+	ShipLogout = 5;//船端注销
+}
+
+message IdentityPack
+{
+    string name = 1;// x_name  x 为 c时 客服端 x为 s时 服务器 x 为 g 时为船端
+	int32 type = 2; //包类型，
+	string ip = 3;
+	string port = 4;
+}

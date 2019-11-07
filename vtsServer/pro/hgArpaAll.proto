@@ -1,0 +1,5 @@
+syntax = "proto3";
+message hgArpaAllPack
+{
+	bytes arpadata = 1;
+}

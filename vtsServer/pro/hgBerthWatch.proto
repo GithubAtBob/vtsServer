@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message hgBerthWatch
+{
+	string MMSI = 1;		
+	bool BerthWatch = 2;
+	double Distance = 3;
+	double Lat = 4; 
+	double Lon = 5;
+}
+
+message hgBerthWatchRepsone
+{
+  
+}

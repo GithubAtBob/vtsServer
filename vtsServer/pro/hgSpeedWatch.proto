@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message hgSpeedWatch
+{
+	string MMSI = 1;
+	bool SpeedWatch = 2;
+  double MinSpeed = 3;
+  double MinDuration = 4;
+  double MaxSpeed = 5;
+  double MaxDuration = 6;
+}
+
+message hgSpeedWatchRepsone
+{
+
+}

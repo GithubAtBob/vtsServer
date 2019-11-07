@@ -1,0 +1,6 @@
+syntax = "proto3";
+message VoltagesPack
+{
+    int32 stateflags = 1; //0Î´Á¬ÉÏ  1 radar1  2 radar2 3 ÈÚºÏ
+    int32 error = 2; //´íÎó  0 ÎŞ´í  1 radar1 websocket´íÎó  2 radar2 websocket´íÎó
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message hgAnchorReserv
+{
+	string MMSI = 1;	
+	string ID = 2;
+	int32 Type = 3;
+	bool AnchorReserv = 4;
+	int64 ETA = 5;
+	int64 ETD = 6;
+	int32 Tracks = 7;
+}
+
+message hgAnchorReservRepsone
+{
+  
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message hgPositionRequest
+{
+	string MMSI = 1;	
+	double COG = 2;	
+	double SOG = 3;
+    int32 Time = 4;		
+    double Lat = 5;        
+    double Lon = 6; 
+
+}
+
+message hgPositionRepsone
+{
+  string MMSI = 1;		
+  double Lat = 2;        
+  double Lon = 3; 
+}
+

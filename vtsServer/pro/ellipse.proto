@@ -1,0 +1,27 @@
+syntax = "proto3";
+message EllipseRequest
+{
+    int32 type = 1;//操作类型
+    string ID = 2;
+    string name = 3;
+    double lat = 4;
+    double lon = 5;
+    double longaxis = 6;
+    double shortaxis = 7;
+    int32 linestyle = 8;
+    int32 fullstyle = 9;
+    int32 linewidth = 10;
+    repeated int32 waringID = 11;
+    string waringtype = 12;
+    string drawman = 13;
+    bool isshare = 14;
+    string linecolor = 15;
+    string fullcolor = 16;
+}
+
+message EllipseRepsone
+{
+    int32 type = 1;//操作类型
+    string result = 2;
+    repeated EllipseRequest ellipses = 3;
+}

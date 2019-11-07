@@ -1,0 +1,8 @@
+syntax = "proto3";
+import "hgPolygonMes.proto";
+message hgAlarmArea
+{
+    int32 type = 1;
+    repeated string mmsi = 2;//不预警区域，MMSI
+    repeated hgPolygonMes polygon = 3;//对应图形
+}

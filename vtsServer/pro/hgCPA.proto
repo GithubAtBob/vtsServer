@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message hgCPA
+{
+	string MMSI = 1;		
+	double OwnLat = 2;
+    double OwnLon = 3;
+    double OwnSog = 4;
+    double OwnCog = 5;		
+	double TargetLat = 6;
+    double TargetLon = 7;  
+    double TargetSog = 8;
+    double TargetCog = 9;	
+}
+
+message hgCPARepsone
+{
+    string MMSI = 1;		
+    double TCPA = 2;        
+	double CPA = 3; 
+}

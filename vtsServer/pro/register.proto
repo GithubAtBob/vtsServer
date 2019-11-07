@@ -1,0 +1,19 @@
+syntax = "proto3";
+message RegisterRequest
+{
+    string account = 1;
+    string userid = 2;
+    string loginname = 3;
+    string username = 4;
+    string password = 5;
+    string phone = 6;
+    string groupID = 7;
+    string avatar = 8;
+    int32 grouptype = 9;
+}
+
+message RegisterRepsone
+{
+    string message = 1;
+    string result = 2;
+}

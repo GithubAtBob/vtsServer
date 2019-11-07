@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message hgCPAData
+{
+	double DayCPA = 1;
+  double DayTCPA = 2;
+  double NightCPA = 3;
+  double NightTCPA = 4;
+  double CustomCPA = 5;
+  double CustomTCPA = 6;
+}
+
+

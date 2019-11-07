@@ -1,0 +1,15 @@
+syntax = "proto3";
+message GroupRequest
+{
+    int32 type = 1;//操作类型
+    string ID = 2;
+    string name = 3;
+    string power = 4;
+    int32 grouptype = 5;
+}
+
+message GroupRepsone
+{
+    int32 type = 1;//操作类型
+    string result = 2;
+}

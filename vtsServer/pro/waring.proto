@@ -1,0 +1,16 @@
+syntax = "proto3";
+message WaringRequest
+{
+    int32 type = 1;//操作类型
+    string ID = 2;
+    string name = 3;
+    int32 waringtype = 4;
+    string time = 5;
+}
+
+message WaringRepsone
+{
+    int32 type = 1;//操作类型
+    string result = 2;
+    repeated WaringRequest waring = 3;
+}

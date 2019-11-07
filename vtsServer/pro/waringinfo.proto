@@ -1,0 +1,42 @@
+syntax = "proto3";
+message WaringInfo
+{
+    int32 enter_time = 1;//入侵
+    double enter_speed = 2;
+    double enter_acceleration = 3;//弃用
+    int32 leave_time = 4;//离开
+    double leave_speed = 5;
+    double leave_acceleration = 6;//弃用
+    int32 inside_time = 7;//内部
+    double inside_speed = 8;
+    double inside_acceleration = 9;//弃用
+    int32 outside_time = 10;//外部
+    double outside_speed = 11;
+    double outside_acceleration = 12;//弃用
+    int32 high_duration = 13;//高速
+    double high_speed = 14;
+    int32 low_duration = 15;//低速
+    double low_speed = 16;
+    int32 pro_duration = 17;//禁锚
+    double pro_lat = 18;
+    double pro_lon = 19;
+    repeated string anc_type = 20;//抛锚
+    double add_max = 21;//加速
+    double add_min = 22;
+    double add_duration = 23;
+    double col_cpa = 24;//碰撞
+    double col_tcpa = 25;
+    double col_dcpa = 26;
+    double col_dist = 27;
+    int32 con_time = 28;//拥挤
+    int32 con_total = 29;
+    double gro_depth = 30;//搁浅
+    int32 gro_time = 31;
+    int32 app_time = 32;//接近
+    int32 cou_change = 33;//航向突变
+    int32 cou_time = 34;
+    int64 fog_begin_time = 35;//雾航
+    int64 fog_end_time = 36;
+    int32 fog_time = 37;
+    repeated string fog_MMSI = 38;
+}

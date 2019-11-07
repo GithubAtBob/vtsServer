@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+enum hgAlgorWarLevel
+{
+  LevelBegin = 0;//无意义
+	DANCOMMONLY = 1;//一般危险
+	DANCOLLISION = 2;//碰撞危险
+	DANCRITICAL = 3;//临界紧迫危险
+	DANURGENT = 4;//陷入紧迫危险局面
+}
+
+enum hgAlgorWarMesType
+{
+    NormalRight = 0;
+    NormalLeft = 1;
+    CollisionRight = 2;
+    CollisionLeft = 3;
+    CollisionDRight = 4;
+    CollisionDLeft = 5;
+    ApproDRight = 6;
+    ApproDLeft = 7;
+    DangerCase = 8;
+}
+
+message hgAlgorWarMes
+{
+    string WarningID = 1;  //警告类型GUID类型标示符
+    string WarningGUID = 2; //数据包唯一标识符
+    int32 WarningPriority = 3;//优先级
+    string WarningName = 4;
+    string MMSI = 5;			// 船号ID
+    string otherMMSI = 6;//预留ID
+    int64 WarningTime = 7; //报警时间
+    hgAlgorWarMesType WarMes = 8;
+    hgAlgorWarLevel level = 9; 
+    int32 blink = 10;
+    double vector_min = 11;
+    int32 sound = 12;
+}

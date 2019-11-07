@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+
+message hgShipAisMessage
+{
+    	string ID = 1;			// 融合ID
+	string MMSI = 2;		// 用户ID
+	double SOG = 3;			// 实际航速SOG
+	double Lon = 4;			// 经度
+	double Lat = 5;			// 纬度
+	double COG = 6;			// 实际航向COG
+	double HDG = 7;			// 真首向
+
+    	double Length = 8;
+    	double Width = 9;
+	int32 DimA = 10;
+	int32 DimB = 11;
+	int32 DimC = 12;
+	int32 DimD = 13;
+	int64 ReportTicks = 14;
+	int64 RecentPeriod = 15;
+    	bool OwnShip = 16;
+    	int32 Source = 17;
+    	int32 Result = 18;
+	int32 Class = 19;		// 转发指示器
+    	int32 ReportInterval = 20; 
+	string ShipName = 21;		//船名
+	int32 hdgtype = 22;		//hdg转向值 0 类型 1类型（暂时对应com ID=0 ID=1）0不转 1转180
+}

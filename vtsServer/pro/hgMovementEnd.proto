@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message hgMovementEnd
+{
+	string MMSI = 1;		
+	bool MovementEnd = 2;
+	int64 Time = 3;
+}
+
+message hgMovementEndRepsone
+{
+  
+}

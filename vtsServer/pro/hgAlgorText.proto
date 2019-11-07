@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message hgAlgorText
+{
+    double RV = 1;
+    double Rc = 2;
+    double Dis = 3;
+    double TCPA = 4;
+    double DCPA = 5;
+    double SDA = 6;
+    double SDAm = 7;
+    double TarLat = 8;
+    double TarLon = 9;
+    double TarCoure = 10;
+    double TarSpd = 11;
+    string TarMMSI = 12;// 当前船相对本船数据信息，
+    int32 BOwn = 13;
+    string OwnMMSI = 14;// 如果为本船此为空，否则为本船MMSI
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message hgAnchorAreaMes
+{
+	string MMSI = 1;		
+	bool AnchorArea = 2;
+	string ID = 3;
+	int32 Type = 4;
+}
+
+message hgAnchorAreaRepsone
+{
+  
+}

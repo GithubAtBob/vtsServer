@@ -1,0 +1,8 @@
+syntax = "proto3";
+message AddUserLay
+{
+    string drawman = 1;//操作账号
+    string pic = 2;//操作的图形
+    string ID = 3;//图形GUID
+    string type = 4;//操作类型
+}

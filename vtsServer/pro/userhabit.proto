@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+enum CardMesType
+{
+	CMTSend = 0;
+	CMTRead = 1;
+	CMTNone = 2;//无此数据启用默认
+}
+enum PreRadioType
+{
+	HalfHour = 0;
+	OneHour = 1;
+	ThreeHour = 2;
+}
+message QuickData
+{
+    string name = 1;
+    double lat = 2;
+    double lon = 3;
+}
+
+message TargetInfoData
+{
+    int32 Index = 1;
+    bool checked = 2;
+}
+
+message ViewCard
+{
+    string userid = 1;
+    double lat = 2;
+    double lon = 3;
+    int32 range = 4;
+    repeated QuickData quick = 5;
+    CardMesType type = 6;
+}
+
+message ChartCard
+{
+    string userid = 1;
+    int32 color = 2;
+    int32 areastyle = 3;
+    int32 pointstyle = 4;
+    double shallow = 5;
+    double safety = 6;
+    double depth = 7;
+    double safetydepth = 8;
+    int32 choicetype = 9;
+    repeated int32 customdata = 10;
+    double safeset = 11;
+    bool isFourshades = 12;
+    bool isUseSCAMIN = 13;
+    bool isMquality = 14;
+    bool isLocalLanguage = 15;
+    CardMesType type = 16;
+}
+
+message SystemCard
+{
+    string userid = 1;
+    bool isGrid = 2;
+    bool isFlower = 3;
+    bool isDimensional = 4;
+    bool isHOG = 5;
+    bool isTurnRate = 6;
+    int32 radiotype = 7;
+    double voyage = 8;
+    double time = 9;
+    int32 latlon = 10;
+    int32 speed = 11;
+    int32 dist = 12;
+    int32 depth = 13;
+    repeated string displayset = 14;
+    CardMesType type = 15;
+}
+
+message DangerTargetCard
+{
+    string userid = 1;
+    int32 Target = 2;
+    double dist = 3;
+    double MaxCPA = 4;
+    string MaxTCPA = 5;
+    int32 radiotype = 6;
+    double MinSpeed = 7;
+    CardMesType type = 8;
+    int32 pre_time = 9;
+    int64 pre_starTime = 10;
+    int64 pre_endTime = 11;
+    PreRadioType pre_check = 12;
+}
+
+message TargetInfoCard
+{
+    CardMesType type = 1;
+    string userid = 2;
+    repeated TargetInfoData tardata = 3;
+    bool showHistor = 4;
+    int32 trackgap = 5;
+    double trackgappoint = 6;
+    double trackspeed = 7;
+    bool showship = 8;
+    bool showLigature = 9;
+    bool count_time = 10;//true 个数 false 时间
+    int32 pointcount = 11;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message hgFuseSet
+{
+    double HDG = 1;
+    double SOG = 2;
+    double Dis = 3;	
+    int32 FuseCount = 4;
+    int32 FuseDis = 5;
+    int32 FuseSog = 6;
+    int32 FuseCog = 7;
+}
+
+

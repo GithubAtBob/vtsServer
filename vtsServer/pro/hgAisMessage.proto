@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+//enum AisClass
+//{
+//	AIS_CLASS_A = 0;				//A类
+//	AIS_CLASS_B = 1;					//B类
+//	AIS_NAVIGATION_AIDS = 2;			//助航物标
+//	AIS_BASE_STATION = 3;				//AIS基站
+//}
+
+// Describe AIS Alarm state——AIS警报的状态
+//enum AisAlarmType
+//{
+//	AIS_NO_ALARM = 0;
+//	AIS_ALARM_SET = 1;
+//	AIS_ALARM_ACKNOWLEDGED = 2;
+//}
+
+message hgAisMessage
+{
+    int32 MID = 1;			// 电文ID
+	int32 Class = 2;		// 转发指示器
+	string MMSI = 3;		// 用户ID
+	int32 NavStatus = 4;	// 航行状态
+	int32 ROTAIS = 5;       // 旋回速率ROT
+	double SOG = 6;			// 实际航速SOG
+	double Lon = 7;			// 经度
+	double Lat = 8;			// 纬度
+	double COG = 9;			// 实际航向COG
+	double HDG = 10;			// 真艏向
+
+
+	int32 IMO = 11;			// IMO号码
+	string CallSign = 12;	// 呼号             
+	string ShipName = 13;	// 船名
+	string ShipType = 14;	// 船型与货物种类
+    int32	PosAccuracy = 15;	//位置精确度
+    int32	EquipmentType = 16;	//定位设备类型
+	int32 ETA_Mo = 17;		// ETA
+	int32 ETA_Day = 18;
+	int32 ETA_Hr = 19;
+	int32 ETA_Min = 20;
+	double Draft = 21;		// 当前最大静态吃水
+	string Destination = 22;	// 目的地
+
+	int32 SyncState = 23;
+	int32 SlotTO = 24;
+	int32 DimA = 25;
+	int32 DimB = 26;
+	int32 DimC = 27;
+	int32 DimD = 28;
+	int64 ReportTicks = 29;
+	int64 RecentPeriod = 30;
+
+	//bool b_active = 31;
+	//int32 n_alarm_state = 32;
+	//bool b_suppress_audio = 33;
+	//bool b_positionValid = 34;
+	//bool b_nameValid = 35;
+
+	int32 m_utc_hour = 31;
+	int32 m_utc_min = 32;
+	int32 m_utc_sec = 33;
+
+	double Range_NM = 34;
+	double Brg = 35;
+
+	bool bCPA_Valid = 36;
+	double TCPA = 37;                   // Minutes
+	double CPA = 38;                     // Nautical Miles
+	bool Simulation = 39;
+    bool OwnShip = 40;
+    int32 ReportInterval = 41; 
+
+  
+    double Length = 42;
+    double Width = 43;
+
+    bool SetShipSize = 44;
+
+    string ChShipName = 45;	// 船名
+    string Nationality = 46;	// 国籍
+    string Note = 47;	//备注
+    
+    string ID = 48;
+    string RadarID = 49;
+    int32 Source = 50;
+    int32 Reserved = 51; 
+    int32 Rng = 52; 
+    double RadarBrg = 53; 
+    double Spd = 54; 
+    double Crs = 55; 
+    int32 Scans = 56; 
+    int32 Flags = 57; 
+    int32 Result = 58;
+    string RadarGUID = 59;
+}
+
+message hgAisRepsone
+{
+    string result = 1;
+}

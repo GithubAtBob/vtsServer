@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+enum hgWarningType
+{
+    Meaningless = 0;        //无意义，不填时赋值
+    OverallCollision = 1; //全局碰撞检测
+    PolygonCollision = 2; //多边形碰撞警报
+    SectorCollision = 3;    //扇形碰撞警报
+    CircleCollision = 4;    //圆形碰撞警报
+
+    //船舶报警
+    AnchorAreaWarn = 5;  //抛锚区
+    ClubbingWarn = 6; //走锚警报
+    DraggingWarn = 7;  //拖锚警报
+    AnchorReservWarn = 8; //预留的锚地警报
+    BerthWatchWarn = 9; //船舶在泊位的警报
+    CollisionWatchWarn = 10; //碰撞警报
+    DomainWatchWarn = 11;     //船舶领域报警
+    GroundWatchWarn = 12;     //搁浅报警
+    ChannelWarn = 13;         //航道
+
+    ReportAreaWarn = 14;   //报告区域偏离报警
+    ReportTimeWarn = 15;  //报告区到达时间报警
+    EarlistWarn = 16;
+    LatestWarn = 17;
+    MinSpeedWarn = 18;           //最小速度
+    MaxSpeedWarn = 19;          //最大速度
+    TurnCircleWarn = 20;  //转向时候的监控  
+    MovementEndWarn = 21;  //船舶不在移动
+    EarlyWarning = 22;  //距离预警
+
+}
+
+enum hgWarningPriority
+{
+    NoRisk = 0;   //解除危险 green
+    PriorityRed =1;  //
+}
+
+

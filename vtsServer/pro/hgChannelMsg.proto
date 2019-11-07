@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+message hgChannelPont
+{
+  double Lat= 1;
+  double Lon = 2;
+}
+
+message hgSimChannel
+{
+  double LeftBeginLat = 1;
+  double LeftEndLat = 2;
+  double MidBeginLat = 3;
+  double MidEndLat = 4;
+  double RightBeginLat = 5;
+  double RightEndLat = 6;
+
+  double LeftBeginLon = 7;
+  double LeftEndLon = 8;
+  double MidBeginLon = 9;
+  double MidEndLon = 10;
+  double RightBeginLon = 11;
+  double RightEndLon = 12;
+  
+  double Length = 13;  
+  double WidthBegin = 14;
+  double WidthEnd = 15;
+  double AllLength = 16;
+  double Angle = 17;
+}
+
+message hgChannelMsg
+{
+  repeated hgSimChannel Channel = 1;
+}
+

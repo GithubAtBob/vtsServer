@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message hgAuthorized
+{
+	string MMSI = 1;		
+	bool Authorized = 2;
+}
+
+message hgAuthorizedRepsone
+{
+  
+}

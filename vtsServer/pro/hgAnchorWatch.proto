@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message hgAnchorWatch
+{
+	string MMSI = 1;		
+	bool AnchorWatch = 2;
+	double Clubbing = 3;
+	double Dragging = 4;
+	double Lat = 5;
+	double Lon = 6;
+}
+
+message hgAnchorWatchRepsone
+{
+  
+}

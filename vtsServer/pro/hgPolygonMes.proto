@@ -1,0 +1,6 @@
+syntax="proto3";//¶à±ßÐÎ
+import "PointMes.proto";
+message hgPolygonMes
+{
+    repeated PointMes point = 1;
+}

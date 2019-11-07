@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message hgNavigatChannel
+{
+	string MMSI = 1;	
+	string ID = 2;
+	int32 Type = 3;
+	bool Channel = 4;
+}
+
+message hgNavigatChannelRepsone
+{
+  
+}

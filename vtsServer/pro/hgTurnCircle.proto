@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message hgTurnCircle
+{
+	string MMSI = 1;		
+	bool TurnCircle = 2;
+	double Radius = 3;
+	double Lat = 4;
+	double Lon = 5;
+}
+
+message hgTurnCircleRepsone
+{
+  
+}

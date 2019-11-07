@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message hgDomain
+{
+	string MMSI = 1;		
+	bool DomainWatch = 2;
+  double DomainRadius = 3;
+  int32 DomainColorR = 4;
+  int32 DomainColorG = 5;		
+	int32 DomainColorB = 6;
+  bool DomainShow = 7;  
+}
+
+message hgDomainRepsone
+{
+  
+}
